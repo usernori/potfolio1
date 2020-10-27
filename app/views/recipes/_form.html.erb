@@ -1,0 +1,25 @@
+<%= form_for @recipe do |form| %>
+    <div class="form-group mb-5">
+        <%= form.file_field :image_recipe %>
+    </div>
+    <div class="form-group">
+        <%= form.label :title, for: "exampleFormControlInput1" %>
+        <%= form.text_field :title, class: "form-control", id: "exampleFormControlInput1" %>
+    </div>
+    <div class="form-group">
+        <%= form.label :description, for: "exampleFormControlInput1" %>
+        <%= form.text_field :description, class: "form-control", id: "exampleFormControlInput1" %>
+    </div>
+    <div class="form-group">
+        <%= form.label :content, for: "exampleFormControlTextarea1" %>
+        <%= form.text_area :content, class: "form-control", id: "exampleFormControlTextarea1 textarea", rows: "5" %>    
+    </div>
+    <p><%= form.check_box :remove_image_recipe, class: "remove-image-checkbox mt-4" %>画像を削除する</p>
+    <%= form.submit class: "btn-controll" %>
+<% end %>
+
+<script>
+    $(function(){
+        $("textarea").autosize();
+    });
+</script>
